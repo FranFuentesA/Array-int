@@ -98,6 +98,28 @@ public class ArrayListInt
         }
         return elementoEncontrado;
     }
+    
+    /**
+     * Metodo que busca si un elemento esta en la posicion eindicada por parametro
+     * si no encuentra devuelve -1.
+     */
+    public int get(int index)
+    {
+        // Inicializamos el valor a devolver a -1, si es un indice
+        // valido le cambiamos el valor
+        int elemento = 0;
+        if (index >= 0 && index < coleccion.length)
+        {
+            elemento = coleccion[index];
+            
+        } else {
+            
+            elemento = -1;
+        
+        }
+        return elemento;
+    }
+    
 }
 
 
