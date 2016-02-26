@@ -30,7 +30,7 @@ public class ArrayListInt
         {
             guardado[index] = coleccion [index];
         }
-        //Despues Asigno el tamaño, con el parametro elemento para no desperdicar espacio
+        //Asigno el parametro elemento en la posicion dada por el tamaño
 
         guardado[coleccion.length] = elemento;
 
@@ -38,5 +38,66 @@ public class ArrayListInt
 
         coleccion = guardado;
     }
+
+    /**
+     * Metodo que añade un elemento a la arrayList en la posicion indicada
+     * @param index La posición donde colocar el numero
+     * @param elemento El elemento a añadir
+     */
+    public void add( int index, int elemento)
+    {
+        // Creo un array para despues pasar los datos y paso todos los valores con un bucle
+        int[] guardado = new int[coleccion.length + 1];
+        int indiceDeGuardado = 0;
+        int indiceDeColeccion = 0;
+        
+        
+            // Creacion de lista temporal para guardar
+
+            while(indiceDeGuardado < coleccion.length)
+            {   
+                //Asigno el parametro elemento en la posicion dada por el tamaño
+                if(indiceDeGuardado == index)
+                {
+                   guardado[indiceDeGuardado] = elemento;
+                }
+
+                else
+                {
+                    guardado[indiceDeGuardado] = coleccion[indiceDeGuardado];                    
+                }
+                indiceDeGuardado++;
+            }
+             
+                coleccion = guardado;
+        }
     
+    /**
+     * Metodo que permite vaciar la coleccion
+     */
+    public void clear()
+    {
+        coleccion = new int[0];
+    }
+
+    /**
+     * Metodo que devuelve si se ha encontrado un elemento en la coleccion a traves del parametro elemento
+     */
+    public boolean contains(int elemento)
+    {
+        // Creamos el boolean que devolveremos como false y un indice
+        boolean elementoEncontrado = false;
+        int index = 0;
+        while (index < coleccion.length && (elementoEncontrado == false))
+        {
+            if (coleccion[index] == elemento)
+            {
+                elementoEncontrado = true;
+            }
+            index++;
+        }
+        return elementoEncontrado;
+    }
 }
+
+
