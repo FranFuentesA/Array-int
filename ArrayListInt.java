@@ -131,6 +131,31 @@ public class ArrayListInt
            coleccion[index] = elemento;
         }
     }
+    
+    /**
+     * Metodo que devuelve el indice en el que aparece la primera ocurrencia del elemento especificado o -1 en caso de que la colección no contenga el elemento especificado.
+     */
+    public int indexOf(int elemento)
+    {
+       
+        boolean elementoEncontrado = false;
+        int indice = 0;
+        int elementoBuscado = 0;
+        while (indice < coleccion.length && (elementoEncontrado == false))
+        {
+            if (coleccion[indice] == elemento)
+            {
+                elementoEncontrado = true;
+                elementoBuscado = indice;
+            }
+            indice++;
+        }
+        if (elementoEncontrado == false) {
+        
+            elementoBuscado = -1;
+        }
+        return elementoBuscado;
+    }
 
 }
 
