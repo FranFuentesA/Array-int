@@ -8,14 +8,14 @@ import java.util.Arrays;
 public class ArrayListInt
 {
     // instance variables - replace the example below with your own
-    
+    private int coleccion[];
 
     /**
      * Constructor for objects of class ArrayListInt
      */
     public ArrayListInt()
     {
-        
+        coleccion = new int [0];
     }
 
     /**
