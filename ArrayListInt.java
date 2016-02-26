@@ -105,9 +105,9 @@ public class ArrayListInt
      */
     public int get(int index)
     {
-        // Inicializamos el valor a devolver a -1, si es un indice
-        // valido le cambiamos el valor
+        
         int elemento = 0;
+        
         if (index >= 0 && index < coleccion.length)
         {
             elemento = coleccion[index];
@@ -120,6 +120,18 @@ public class ArrayListInt
         return elemento;
     }
     
+     /**
+     *Metodo que añade un elemento en la posicion indicada sobreescribiendo el anterior
+     */
+    public void set( int index, int elemento)
+    {
+        
+        if (index >= 0 && index < coleccion.length)
+        {
+           coleccion[index] = elemento;
+        }
+    }
+
 }
 
 
