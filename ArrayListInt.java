@@ -19,13 +19,24 @@ public class ArrayListInt
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Metodo para añadir un elemento dado al Array
      */
-    public void sampleMethod()
+    public void add(int elemento)
     {
-        
+        // Creo un array para despues pasar los datos y paso todos los valores con un bucle
+        int[] guardado = new int[coleccion.length + 1];
+
+        for(int index = 0; index < coleccion.length; index++)
+        {
+            guardado[index] = coleccion [index];
+        }
+        //Despues Asigno el tamaño, con el parametro elemento para no desperdicar espacio
+
+        guardado[coleccion.length] = elemento;
+
+        //asigno los valores de la coleccion guardado a la coleccion principal
+
+        coleccion = guardado;
     }
+    
 }
