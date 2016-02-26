@@ -203,5 +203,15 @@ public class ArrayListInt
         }
         return resultado;
     }
+    
+    /**
+     * Metodo que devuelve el tamaño de la coleccion
+     */
+    public int size()
+    {
+        return coleccion.length;
+    }
+
+    
 }
 
