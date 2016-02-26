@@ -168,5 +168,40 @@ public class ArrayListInt
 
         return coleccionVacia;
     }
+
+    /**
+     * Metodo que elimina de la colección el elemento que ocupa la posición especificada y devuelve dicho elemento. Si el valor de index no es válido, no hace nada y devuelve -1.
+     */
+    public int remove(int index)
+    {
+        boolean elementoEliminado = false;
+        int resultado = 0;
+        if ((index <= coleccion.length) && (index >= 0) && (coleccion.length != 0))
+        {
+            int[] guardado = new int[coleccion.length - 1];
+            int indiceGuardado = 0;
+            int indiceColeccion = 0;
+            elementoEliminado = true;
+            while(indiceColeccion < (coleccion.length))
+            {
+                if( indiceGuardado!= index)
+                {
+                    guardado[indiceGuardado] = coleccion[indiceColeccion];
+                    indiceGuardado++;
+                }
+                else
+                {
+                    resultado = coleccion[indiceColeccion];
+                }
+                indiceColeccion++;
+            }
+            coleccion =guardado;
+        } 
+        if (elementoEliminado == false){
+
+            resultado = -1;
+        }
+        return resultado;
+    }
 }
 
