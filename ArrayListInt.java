@@ -50,28 +50,26 @@ public class ArrayListInt
         int[] guardado = new int[coleccion.length + 1];
         int indiceDeGuardado = 0;
         int indiceDeColeccion = 0;
-        
-        
-            // Creacion de lista temporal para guardar
 
-            while(indiceDeGuardado < coleccion.length)
-            {   
-                //Asigno el parametro elemento en la posicion dada por el tamaño
-                if(indiceDeGuardado == index)
-                {
-                   guardado[indiceDeGuardado] = elemento;
-                }
-
-                else
-                {
-                    guardado[indiceDeGuardado] = coleccion[indiceDeGuardado];                    
-                }
-                indiceDeGuardado++;
+        // Creacion de lista temporal para guardar
+        while(indiceDeGuardado < coleccion.length)
+        {   
+            //Asigno el parametro elemento en la posicion dada por el tamaño
+            if(indiceDeGuardado == index)
+            {
+                guardado[indiceDeGuardado] = elemento;
             }
-             
-                coleccion = guardado;
+
+            else
+            {
+                guardado[indiceDeGuardado] = coleccion[indiceDeGuardado];                    
+            }
+            indiceDeGuardado++;
         }
-    
+
+        coleccion = guardado;
+    }
+
     /**
      * Metodo que permite vaciar la coleccion
      */
@@ -98,46 +96,46 @@ public class ArrayListInt
         }
         return elementoEncontrado;
     }
-    
+
     /**
      * Metodo que busca si un elemento esta en la posicion eindicada por parametro
      * si no encuentra devuelve -1.
      */
     public int get(int index)
     {
-        
+
         int elemento = 0;
-        
+
         if (index >= 0 && index < coleccion.length)
         {
             elemento = coleccion[index];
-            
+
         } else {
-            
+
             elemento = -1;
-        
+
         }
         return elemento;
     }
-    
-     /**
+
+    /**
      *Metodo que añade un elemento en la posicion indicada sobreescribiendo el anterior
      */
     public void set( int index, int elemento)
     {
-        
+
         if (index >= 0 && index < coleccion.length)
         {
-           coleccion[index] = elemento;
+            coleccion[index] = elemento;
         }
     }
-    
+
     /**
      * Metodo que devuelve el indice en el que aparece la primera ocurrencia del elemento especificado o -1 en caso de que la colección no contenga el elemento especificado.
      */
     public int indexOf(int elemento)
     {
-       
+
         boolean elementoEncontrado = false;
         int indice = 0;
         int elementoBuscado = 0;
@@ -151,12 +149,24 @@ public class ArrayListInt
             indice++;
         }
         if (elementoEncontrado == false) {
-        
+
             elementoBuscado = -1;
         }
         return elementoBuscado;
     }
 
-}
+    /**
+     * Metodo que devuelve true si la lista no contiene elementos.
+     */
+    public boolean isEmpty()
+    {
+        boolean coleccionVacia = false;
 
+        if ((coleccion.length == 0)) {
+            coleccionVacia = true;
+        }
+
+        return coleccionVacia;
+    }
+}
 
